@@ -35,4 +35,16 @@ public class LinkedList {
     System.out.println(printArr.toString());
     return printArr;
     }
+//this is the ll_insertions code challenge starting point
+    //this method is the .append(value) which adds a new node with the given value to the end of the list
+    public void append(int value) {
+       Node current = this.head;
+       Node newNode = new Node(value, null);
+        while(current != null){
+            if (current.next == null){
+                current = newNode;
+            }
+            else{current = current.next;}
+        }
+    }
 }
