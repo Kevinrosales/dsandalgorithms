@@ -22,4 +22,14 @@ public class LinkedListTest {
     @Test
     public void testPrint() {
     }
+
+    @Test
+    public void testAppend(){
+
+    }
+
+    @Test
+    public void testKFromEnd(){
+        
+    }
 }

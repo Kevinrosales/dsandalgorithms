@@ -47,4 +47,24 @@ public class LinkedList {
             else{current = current.next;}
         }
     }
+//this is the ll_kth_from_end code challenge starting point
+    //this method is the which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list
+    public int kFromEnd(int k) {
+        Node curr = this.head;
+        int count = 1;
+
+        while (curr != null) {
+            count++;
+            curr = curr.next;
+        }
+        int[] arr = new int[count];
+        curr = this.head;
+
+        while (curr != null) {
+            count--;
+            arr[count] = curr.data;
+            curr = curr.next;
+        }
+        return arr[k];
+    }
 }
