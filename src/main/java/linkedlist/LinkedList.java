@@ -67,4 +67,8 @@ public class LinkedList {
         }
         return arr[k];
     }
+//    this is the ll_merge method from the code challenge 08!!
+//    public static ll_merge(){
+//
+//    }
 }
