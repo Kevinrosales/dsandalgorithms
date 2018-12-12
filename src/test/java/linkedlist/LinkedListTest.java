@@ -20,16 +20,52 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testPrint() {
+    public void testAppend() {
+        LinkedList append = new LinkedList();
+
+        append.insert(1);
+        append.append(2);
+
+        assertTrue("Should be a 2 in the list", append.includes(2));
+        assertEquals("should be a 2 after the head", 2, append.head.next.data);
+
     }
 
     @Test
-    public void testAppend(){
+    public void testInsertBefore() {
+        LinkedList before = new LinkedList();
+
+        before.insert(5);
+        before.insert(2);
+        before.insert(6);
+
+        before.insertBefore(5, 4);
+        assertTrue("should be a new node in the list", before.includes(4));
+
+        before.insertBefore(2, 0);
+        assertTrue("should be a new node in the list", before.includes(0));
+
+        before.insertBefore(6, 7);
+        assertTrue("should be a new node in the list", before.includes(7));
 
     }
 
     @Test
-    public void testKFromEnd(){
+    public void testInsertAfter() {
+        LinkedList after = new LinkedList();
 
+        after.insert(3);
+        after.insert(2);
+        after.insert(1);
+
+        after.insertAfter(3, 4);
+        assertTrue("should have a Node with the value 4", after.includes(4));
+
+        after.insertAfter(4, 5);
+        assertTrue("should add a Node with the value 5", after.includes(5));
+
+        after.insertAfter(1, 2);
+        assertTrue("should add a Node with the value 2", after.includes(2));
     }
+
 }

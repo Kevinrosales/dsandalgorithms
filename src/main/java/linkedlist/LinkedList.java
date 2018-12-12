@@ -2,7 +2,7 @@ package linkedlist;
 import java.util.ArrayList;
 
 public class LinkedList {
-    private Node head;
+    public Node head;
 
     public LinkedList() {
         this.head = null;
@@ -36,19 +36,59 @@ public class LinkedList {
     return printArr;
     }
 //this is the ll_insertions code challenge starting point
-    //this method is the .append(value) which adds a new node with the given value to the end of the list
+// this method is the .append(value) which adds a new node with the given value to the end of the list
+
     public void append(int value) {
-       Node current = this.head;
-       Node newNode = new Node(value, null);
-        while(current != null){
-            if (current.next == null){
-                current = newNode;
+        Node current = this.head;
+        while (current != null) {
+            if (current.next == null) {
+                current.next = new Node(value, null);
+                break;
             }
-            else{current = current.next;}
+            current = current.next;
         }
     }
+
+    //this method will add a new node with the given newValue immediately before the first value node
+    public void insertBefore(int value, int newVal) {
+        if (!includes(value)) {
+            return;
+        }
+
+        Node current = this.head;
+
+        if(value == current.data) {
+            insert(newVal);
+            return;
+        }
+        while (current.next != null) {
+            if (current.next.data == value) {
+                current.next = new Node(newVal, current.next);
+                break;
+            }
+            current = current.next;
+        }
+    }
+
+    //this method will add a new node with the given newValue immediately after the first value node
+    public void insertAfter(int value, int newVal) {
+        if (!includes(value)) {
+            return;
+        }
+
+        Node current = this.head;
+
+        while (current != null) {
+            if (current.data == value) {
+                current.next = new Node(newVal, current.next);
+                break;
+            }
+            current = current.next;
+        }
+    }
+
 //this is the ll_kth_from_end code challenge starting point
-    //this method is the which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list
+//this method is the which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list
     public int kFromEnd(int k) {
         Node curr = this.head;
         int count = 1;
@@ -67,8 +107,5 @@ public class LinkedList {
         }
         return arr[k];
     }
-//    this is the ll_merge method from the code challenge 08!!
-//    public static ll_merge(){
-//
-//    }
+
 }
