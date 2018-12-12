@@ -45,6 +45,8 @@ public class LinkedListTest {
         before.insertBefore(2, 0);
         assertTrue("should be a new node in the list", before.includes(0));
 
+        before.insertBefore(6, 7);
+        assertTrue("should be a new node in the list", before.includes(7));
 
     }
 
@@ -61,6 +63,9 @@ public class LinkedListTest {
 
         after.insertAfter(4, 5);
         assertTrue("should add a Node with the value 5", after.includes(5));
+
+        after.insertAfter(1, 2);
+        assertTrue("should add a Node with the value 2", after.includes(2));
     }
 
 }
