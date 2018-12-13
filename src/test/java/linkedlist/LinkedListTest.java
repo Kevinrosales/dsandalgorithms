@@ -1,11 +1,25 @@
 package linkedlist;
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
 
+//////////////////////////code challenge 05 test starts////////////////////////////////////////////////////////////
     @Test
     public void testInsert() {
+        LinkedList insert = new LinkedList();
+
+        insert.insert(1);
+        assertEquals("head node should be 1", 1, insert.head.data);
+        assertNull(" next value of  head should be null", insert.head.next);
+
+        insert.insert(2);
+        assertEquals("head node should be 2", 2, insert.head.data);
+        assertEquals("The next after head should be 1", 1, insert.head.next.data);
+        assertNull("value at end should be null", insert.head.next.next);
     }
 
     @Test
@@ -18,6 +32,22 @@ public class LinkedListTest {
         assertFalse("false would be 0", incluList.includes(0));
 
     }
+
+    @Test
+    public void testPrint_LastValueCorrect(){
+        LinkedList Printing = new LinkedList();
+
+        Printing.insert(1);
+        Printing.insert(2);
+        Printing.insert(3);
+
+        ArrayList<Integer> printedList = Printing.print();
+        int finalNode = printedList.get(printedList.size()-1);
+
+        assertEquals( 1, finalNode);
+    }
+//////////////////////////code challenge 05 test ends////////////////////////////////////////////////////////////
+
 
     @Test
     public void testAppend() {
