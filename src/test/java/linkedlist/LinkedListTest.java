@@ -48,6 +48,7 @@ public class LinkedListTest {
     }
 //////////////////////////code challenge 05 test ends////////////////////////////////////////////////////////////
 
+//////////////////////////code challenge 06 test starts////////////////////////////////////////////////////////////
 
     @Test
     public void testAppend() {
@@ -97,5 +98,22 @@ public class LinkedListTest {
         after.insertAfter(1, 2);
         assertTrue("should add a Node with the value 2", after.includes(2));
     }
+//////////////////////////code challenge 06 test ends////////////////////////////////////////////////////////////
 
+//////////////////////////code challenge 07 test starts////////////////////////////////////////////////////////////
+@Test
+public void testFindKFromEnd() {
+    LinkedList KFromEnd = new LinkedList();
+
+    KFromEnd.insert(0);
+    KFromEnd.insert(1);
+    KFromEnd.insert(2);
+    KFromEnd.insert(3);
+    KFromEnd.insert(4);
+
+    assertEquals("Should be last value if 0", 0, KFromEnd.kFromEnd(0));
+    assertEquals("should return 1", 1, KFromEnd.kFromEnd(1));
+    assertEquals("Should be new head", 4, KFromEnd.kFromEnd(4));
+}
+//////////////////////////code challenge 07 test ends////////////////////////////////////////////////////////////
 }

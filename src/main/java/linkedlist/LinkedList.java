@@ -91,7 +91,7 @@ public class LinkedList {
 //this method is the which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list
     public int kFromEnd(int k) {
         Node curr = this.head;
-        int count = 1;
+        int count = 0;
 
         while (curr != null) {
             count++;
