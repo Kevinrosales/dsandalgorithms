@@ -1,26 +1,35 @@
 package stacksandqueues;
+public class Stack<T> {
+    public Node<T> top;
 
-public class Stack {
-
-    public Node top = null;
-
-    public Stack(){
+    public Stack() {
         this.top = null;
     }
 
-    public void push(int value){
-        Node newNode = new Node(value, this.top);
-        top = newNode;
+    public void push(T val) {
+        Node<T> newTopNode = new Node(val, this.top);
+        this.top = newTopNode;
     }
 
-    public int pop(){
-        Node temp = this.top;
-        top = top.next;
+    public T pop() {
+        if(this.top != null){
+            Node<T> topNode = this.top;
 
-        return temp.data;
+            this.top = this.top.next;
+
+            topNode.next = null;
+
+            return topNode.getData();
+
+        } else {
+            return null;
+        }
     }
 
-    public Node peek(){
-        return top;
+
+    public T peek(){
+        // if top is not null, return the value contained in the top node
+        // else, return null
+        return (this.top != null) ? this.top.getData() : null;
     }
 }
