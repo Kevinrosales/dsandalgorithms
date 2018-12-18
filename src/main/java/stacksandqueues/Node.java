@@ -1,8 +1,8 @@
 package stacksandqueues;
 
 public class Node<T> {
-    protected T data;
-    protected Node next;
+    public T data;
+    public Node next;
 
     public Node(T data, Node nextNode) {
         this.data = data;
