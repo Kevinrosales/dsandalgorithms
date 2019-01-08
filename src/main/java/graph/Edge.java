@@ -1,14 +1,16 @@
 package graph;
 
-public class Edge {
+public class Edge<K> {
     int weight;
-    public Vertex starting;
-    public Vertex neighbors;
+    public Node<K> node;
 
-    public Edge(int weight, Vertex starting, Vertex neighbors){
-        this.weight = weight;
-        this.starting = starting;
-        this.neighbors = neighbors;
+    public Edge(Node<K> node) {
+        this(1, node);
     }
 
+    public Edge(int weight, Node<K> node) {
+        this.weight = weight;
+        this.node = node;
+
+    }
 }
