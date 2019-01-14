@@ -28,4 +28,12 @@ public class Graph<K> {
         return this.nodes;
     }
 
+    public int size() {
+        return this.nodes.size();
+    }
+
+    public Set<Edge<K>> getNeighbor(Node<K> node) {
+        return node.neighbors;
+    }
+
 }
