@@ -1,9 +1,9 @@
-package Hashtable;
-
-import org.junit.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-class HashtableTest {
-
-}
+//package Hashtable;
+//
+//import org.junit.Test.*;
+//
+//import static org.junit.jupiter.api.Assertions.*;
+//
+//class HashtableTest {
+//
+//}
